@@ -1,0 +1,4 @@
+Notes:
+
+ - Underscore indicates helper method. helper method does work inside the class but isnt intended to be called through an instance 
+ 

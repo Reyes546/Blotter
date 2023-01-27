@@ -25,14 +25,14 @@ class Blotter:
 
 
 		#set background color.
-		self.bg_color = (230, 0, 0)
+		self.bg = pygame.image.load("Imgs/Forest.png")
 
 	def run(self):
 		"""Start the main loop for the game"""
 		while True:
 			self._check_events()
 
-			self._update_screen()
+			self._update_menu_screen()
 
 
 	def _check_events(self):
@@ -72,8 +72,9 @@ class Blotter:
 			pygame.mouse.set_visible(False)
 
 
-	def _update_screen(self):
-		self.screen.fill(self.settings.bg_color)
+	def _update_menu_screen(self):
+		#self.screen.blit(self.bg, (0,0))
+		self.screen.blit(pygame.transform.scale(self.bg, (self.settings.screen_width, self.settings.screen_height)), (0, 0))
 
 		#make the mose recently drawn screen visible.
 		pygame.display.flip()	
